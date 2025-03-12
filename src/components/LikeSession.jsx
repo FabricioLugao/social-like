@@ -16,7 +16,7 @@ const ButtonContainer = styled.div`
 `;
 
 const LikeButton = styled.button`
-  background-color: #005bb5;
+  background-color: #0084ff;
   color: white;
   padding: 8px 15px;
   border: none;
@@ -32,7 +32,7 @@ const LikeButton = styled.button`
 `;
 
 const DislikeButton = styled.button`
-  background-color: #b50000;
+  background-color: #ff4d4d;
   color: white;
   padding: 8px 15px;
   border: none;
@@ -45,6 +45,11 @@ const DislikeButton = styled.button`
     transform: scale(0.95);
     opacity: 0.7;
   }
+
+  &[disabled] {
+    background-color: #ccc;
+    color: #888;
+  }
 `;
 
 const LikeText = styled.p`
@@ -54,8 +59,12 @@ const LikeText = styled.p`
   font-weight: bold;
 `;
 
-export default function LikeButtonComponent() {
-  const [likes, setLikes] = useState(0);
+export default function LikeSession() {
+  console.log("LikeSession renderizou!");
+  const [likes, setLikes] = useState(12);
+  // NÃO FUNCIONA!
+  //let likes = 0;
+  //likes = likes + 1;
 
   const LikeClick = () => {
     setLikes(likes + 1);
@@ -67,9 +76,7 @@ export default function LikeButtonComponent() {
 
   return (
     <LikeContainer>
-      <LikeText>
-        {likes} {likes === 1 ? "like" : "likes"}
-      </LikeText>
+      <LikeText>{likes} curtida(s)</LikeText>
       <ButtonContainer>
         <LikeButton onClick={LikeClick}>👍 Curtir</LikeButton>
         <DislikeButton onClick={DislikeClick} disabled={likes === 0}>

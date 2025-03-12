@@ -1,10 +1,12 @@
-import LikeButton from "./LikeButton";
+import LikeSession from "./LikeSession";
 import userAvatar from "../assets/user.png"; // Importando o avatar do usuário
 import styled from "styled-components";
+import CommentSection from "./CommentSection";
 
 const PostCardContainer = styled.div`
   width: 500px;
   border: 1px solid #ddd;
+  padding-bottom: 16px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -53,8 +55,11 @@ export default function PostCard() {
           </p>
         </UserInfo>
         <p>Essa é uma foto incrível! O que vocês acham? 📸</p>
-        <LikeButton />
+
+        <LikeSession />
       </PostContent>
+
+      <CommentSection />
     </PostCardContainer>
   );
 }
