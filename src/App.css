@@ -8,7 +8,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   margin: 0;
 }
 
@@ -16,6 +15,7 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /* Container de likes e botões */
@@ -46,16 +46,6 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-weight: 500;
-}
-
-button:first-of-type {
-  background-color: #0084ff;
-  color: white;
-}
-
-button:last-of-type {
-  background-color: #ff4d4d;
-  color: white;
 }
 
 button:active {
