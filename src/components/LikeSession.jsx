@@ -60,6 +60,7 @@ const LikeText = styled.p`
 `;
 
 export default function LikeSession() {
+  console.log("LikeSession renderizou!");
   const [likes, setLikes] = useState(12);
   // NÃO FUNCIONA!
   //let likes = 0;

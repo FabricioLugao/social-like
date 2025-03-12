@@ -38,6 +38,25 @@ const SubmitButton = styled.button`
   }
 `;
 
+const CommentItem = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+`;
+
+const DeleteButton = styled.button`
+  background-color: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    color: darkred;
+  }
+`;
+
 const CommentSection = () => {
   const comments = [
     "Ótima foto! 😍",
@@ -56,12 +75,20 @@ const CommentSection = () => {
     alert(newComment);
   };
 
+  const deleteComment = (index) => {
+    alert(`Excluir comentário do user${index}`);
+    // Implementar a lógica de exclusão do comentário aqui
+  };
+
   return (
     <CommentSectionContainer>
       <h3>Comentários</h3>
       <CommentList>
         {comments.map((comment, index) => (
-          <Comment key={index} text={comment} index={index} />
+          <CommentItem key={index}>
+            <Comment text={comment} index={index} />
+            <DeleteButton onClick={() => deleteComment(index)}>x</DeleteButton>
+          </CommentItem>
         ))}
       </CommentList>
 
