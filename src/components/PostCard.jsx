@@ -3,6 +3,31 @@ import userAvatar from "../assets/user.png"; // Importando o avatar do usuário
 import styled from "styled-components";
 import CommentSection from "./CommentSection";
 
+export default function PostCard() {
+  return (
+    <PostCardContainer>
+      <PostImage
+        src={`https://picsum.photos/500/300?random=1`}
+        alt="Imagem aleatória"
+      />
+      <PostContent>
+        <UserInfo>
+          <Avatar src={userAvatar} alt="Avatar do usuário" />
+          <p>
+            <strong>usuario.ads</strong>
+          </p>
+        </UserInfo>
+        <p>Essa é uma foto incrível! O que vocês acham? 📸</p>
+
+        <LikeSession />
+      </PostContent>
+
+      <CommentSection />
+    </PostCardContainer>
+  );
+}
+
+/* ---- Estilos ---- */
 const PostCardContainer = styled.div`
   width: 500px;
   border: 1px solid #ddd;
@@ -38,28 +63,3 @@ const Avatar = styled.img`
   object-fit: cover;
   border: 2px solid #ddd;
 `;
-
-export default function PostCard() {
-  return (
-    <PostCardContainer>
-      <PostImage
-        src={`https://picsum.photos/500/300?random=1`}
-        alt="Imagem aleatória"
-        className="post-image"
-      />
-      <PostContent>
-        <UserInfo>
-          <Avatar src={userAvatar} alt="Avatar do usuário" className="avatar" />
-          <p>
-            <strong>usuario.ads</strong>
-          </p>
-        </UserInfo>
-        <p>Essa é uma foto incrível! O que vocês acham? 📸</p>
-
-        <LikeSession />
-      </PostContent>
-
-      <CommentSection />
-    </PostCardContainer>
-  );
-}

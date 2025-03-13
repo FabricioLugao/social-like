@@ -1,14 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import userAvatar from "../assets/user.png"; // Imagem fixa do avatar do usuário
+import userAvatar from "../assets/user.png";
 
-// Styled Components
+export default function Comment({ text, index }) {
+  return (
+    <CommentContainer>
+      <Avatar src={userAvatar} alt="Avatar do usuário" />
+      <CommentContent>
+        <UserName>user{index}</UserName>
+        <CommentText>{text}</CommentText>
+      </CommentContent>
+    </CommentContainer>
+  );
+}
+
+/* ---- Estilos ---- */
 const CommentContainer = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 10px;
   padding: 10px 0;
-  border-bottom: 1px solid #ddd; /* Separador entre os comentários */
 `;
 
 const Avatar = styled.img`
@@ -41,17 +52,3 @@ const Divider = styled.hr`
   border: 0;
   border-top: 1px solid #ddd;
 `;
-
-const Comment = ({ text, index }) => {
-  return (
-    <CommentContainer>
-      <Avatar src={userAvatar} alt="Avatar do usuário" />
-      <CommentContent>
-        <UserName>user{index}</UserName>
-        <CommentText>{text}</CommentText>
-      </CommentContent>
-    </CommentContainer>
-  );
-};
-
-export default Comment;

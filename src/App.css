@@ -11,34 +11,6 @@ body {
   margin: 0;
 }
 
-.app-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-/* Container de likes e botões */
-.like-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-/* Texto dos likes alinhado à esquerda */
-.like-text {
-  flex-grow: 1;
-  text-align: left;
-  font-weight: 500;
-}
-
-/* Grupo dos botões, mantendo-os juntos e alinhados à direita */
-.button-group {
-  display: flex;
-  gap: 5px;
-}
-
 /* Estilização dos botões */
 button {
   padding: 5px 10px;

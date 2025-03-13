@@ -2,6 +2,34 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+export default function LikeSession() {
+  const [likes, setLikes] = useState(12);
+  // NÃO FUNCIONA!
+  //let likes = 0;
+  //likes = likes + 1;
+
+  const LikeClick = () => {
+    setLikes(likes + 1);
+  };
+
+  const DislikeClick = () => {
+    setLikes(likes - 1);
+  };
+
+  return (
+    <LikeContainer>
+      <LikeText>{likes} curtida(s)</LikeText>
+      <ButtonContainer>
+        <LikeButton onClick={LikeClick}>👍 Curtir</LikeButton>
+        <DislikeButton onClick={DislikeClick} disabled={likes === 0}>
+          👎 Descurtir
+        </DislikeButton>
+      </ButtonContainer>
+    </LikeContainer>
+  );
+}
+
+/* ---- Estilos ---- */
 const LikeContainer = styled.div`
   display: flex;
   align-items: center;
@@ -58,30 +86,3 @@ const LikeText = styled.p`
   margin: 0;
   font-weight: bold;
 `;
-
-export default function LikeSession() {
-  const [likes, setLikes] = useState(12);
-  // NÃO FUNCIONA!
-  //let likes = 0;
-  //likes = likes + 1;
-
-  const LikeClick = () => {
-    setLikes(likes + 1);
-  };
-
-  const DislikeClick = () => {
-    setLikes(likes - 1);
-  };
-
-  return (
-    <LikeContainer>
-      <LikeText>{likes} curtida(s)</LikeText>
-      <ButtonContainer>
-        <LikeButton onClick={LikeClick}>👍 Curtir</LikeButton>
-        <DislikeButton onClick={DislikeClick} disabled={likes === 0}>
-          👎 Descurtir
-        </DislikeButton>
-      </ButtonContainer>
-    </LikeContainer>
-  );
-}
