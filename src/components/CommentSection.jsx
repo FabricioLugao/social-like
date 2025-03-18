@@ -3,11 +3,11 @@ import styled from "styled-components";
 import Comment from "./Comment";
 
 export default function CommentSection() {
-  const comments = [
+  const [comments, setComments] = useState([
     "Ótima foto! 😍",
     "Incrível! Que lugar é esse?",
     "Adorei essa perspectiva! 📸",
-  ];
+  ]);
 
   const [newComment, setNewComment] = useState("");
 
@@ -17,12 +17,14 @@ export default function CommentSection() {
   };
 
   const clickSubmitComment = () => {
-    alert(newComment);
+    setComments([...comments, newComment]);
+    setNewComment("");
   };
 
   const deleteComment = (index) => {
-    alert(`Excluir comentário do user${index}`);
-    // Implementar a lógica de exclusão do comentário aqui
+    const novosComentarios = [...comments];
+    novosComentarios.splice(index, 1);
+    setComments(novosComentarios);
   };
 
   return (
